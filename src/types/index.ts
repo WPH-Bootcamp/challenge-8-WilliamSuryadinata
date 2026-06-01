@@ -21,6 +21,39 @@
  */
 export type ButtonVariant = 'primary' | 'secondary' | 'outline';
 
+export interface NavItem {
+  label: string;
+  href: string;
+}
+
+export interface SolutionItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface TestimonialItem {
+  id: number;
+  name: string;
+  role: string;
+  quote: string;
+  image: string;
+}
+
+export interface IndustryItem {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+export interface PortfolioItem {
+  id: string;
+  title: string;
+  category: string;
+  imagePath: string;
+}
+
 /**
  * Example: Button Props
  * Uncomment dan sesuaikan dengan kebutuhan

@@ -5,11 +5,38 @@
  * Docs: https://tailwindcss.com/docs/installation/using-vite
  */
 
-@import "tailwindcss";
+@import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
 /* Tell Tailwind where to scan for classes */
 @source "./**/*.{js,jsx,ts,tsx}";
 @source "../index.html";
+
+@layer base {
+  body {
+    /* Mode Light: Putih bersih. Mode Dark: Hitam pekat */
+    @apply bg-white text-gray-900 dark:bg-black dark:text-white transition-colors duration-300;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
 
 /**
  * Custom Global Styles
