@@ -1,6 +1,3 @@
-import React from 'react';
-
-// Memanggil data yang sudah dirapikan dari file terpisah
 import { solutionsData } from '../../data/solutions';
 
 const SolutionsSection = () => {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ThemeToggle from '../ui/ThemeToggle';
 
 import logoSymbol from '../../assets/image/logo-symbol.png';

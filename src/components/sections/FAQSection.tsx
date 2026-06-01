@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { faqData } from '../../data/FAQ';
 import consultationImg from '../../assets/image/Consultation.png';
 

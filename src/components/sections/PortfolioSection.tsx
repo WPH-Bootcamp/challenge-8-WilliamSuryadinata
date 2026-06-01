@@ -1,6 +1,3 @@
-import React from 'react';
-// Panggil data projects dari file portfolio.ts
-// Sesuaikan jalur '../' agar tepat mengarah ke folder data Anda
 import { projects } from '../../data/portfolio';
 
 const PortfolioSection = () => {

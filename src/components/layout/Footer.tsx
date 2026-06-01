@@ -1,4 +1,3 @@
-import React from 'react';
 import logoSymbol from '../../assets/image/logo-symbol.png';
 import socialMedia from '../../assets/icon/Social Media.png';
 

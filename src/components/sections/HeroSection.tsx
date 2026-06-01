@@ -1,7 +1,7 @@
-import React from 'react';
 import Button from '../ui/Button';
-import heroDark from '../../assets/image/Hero-dark.png';
-import heroLight from '../../assets/image/Hero-light.png';
+
+// Memanggil data yang sudah dirapikan dari file hero
+import { heroData } from '../../data/hero';
 
 const HeroSection = () => {
   return (
@@ -14,22 +14,19 @@ const HeroSection = () => {
           {/* KIRI: Teks & Tombol */}
           <div className='space-y-6 text-center md:text-left order-2 md:order-1 flex flex-col justify-center'>
             <h1 className='text-4xl sm:text-5xl lg:text-[50px] font-semibold leading-[1.15] tracking-tight text-slate-900 dark:text-white tracking-wide'>
-              Your Tech Partner for
+              {heroData.titleLine1}
               <br className='hidden lg:block' />
-              <span className='text-[#FF6B4A]'> Smarter Growth</span>
+              <span className='text-[#FF6B4A]'>{heroData.titleHighlight}</span>
             </h1>
-
-            <p className='text-base sm:text-lg text-black dark:text-white max-w-lg mx-auto md:mx-0 leading-relaxed font-normal'>
-              We deliver tailored IT solutions to help you scale with speed and
-              confidence
+            <p className='text-base md:text-[18px] text-slate-600 dark:text-slate-400 leading-relaxed font-normal max-w-lg mx-auto md:mx-0'>
+              {heroData.description}
             </p>
-
-            <div className='flex flex-col sm:flex-row gap-5 justify-center md:justify-start pt-1'>
+            <div className='flex gap-5 justify-center md:justify-start pt-1'>
               <Button
                 variant='primary'
                 className='px-23 py-3 text-lg font-semibold text-white rounded-full bg-gradient-to-b from-[#FF6B4A] to-[#FF6B4A] transition-all duration-300 hover:-translate-y-1 shadow-md'
               >
-                Let's Talk
+                {heroData.buttonText}
               </Button>
             </div>
           </div>
@@ -39,7 +36,7 @@ const HeroSection = () => {
             <div className='w-full max-w-md lg:max-w-lg xl:max-w-xl'>
               {/* Gambar Light Mode: Muncul saat terang, menghilang saat mode gelap (dark:hidden) */}
               <img
-                src={heroLight}
+                src={heroData.images.light}
                 alt='Hero Illustration Light'
                 className='w-full h-auto object-contain select-none rounded-xl block dark:hidden'
                 draggable='false'
@@ -47,7 +44,7 @@ const HeroSection = () => {
 
               {/* Gambar Dark Mode: Awalnya tersembunyi (hidden), lalu muncul saat mode gelap (dark:block) */}
               <img
-                src={heroDark}
+                src={heroData.images.dark}
                 alt='Hero Illustration Dark'
                 className='w-full h-auto object-contain select-none rounded-xl hidden dark:block'
                 draggable='false'

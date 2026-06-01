@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 // Import ikon chevron
 import chevronDown from '../../assets/icon/chevron down.png';

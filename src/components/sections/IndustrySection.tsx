@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 // Memanggil data industri dari file terpisah yang sudah Anda buat
 import { industryData } from '../../data/industry';
