@@ -1,10 +1,6 @@
-import React, { useState } from 'react';
-
-// Memanggil data dari file terpisah
+import React, { useState, useEffect } from 'react';
 import { testimonialsData } from '../../data/testimonials';
 import type { TestimonialItem } from '../../types';
-
-// Import ikon dan gambar dekorasi
 import ratingImg from '../../assets/image/Rating.png';
 import vectorIcon from '../../assets/icon/Vector.png';
 
@@ -12,22 +8,33 @@ const TestimonialsSections = () => {
   // State untuk melacak slide mana yang sedang aktif (tengah)
   const [activeIndex, setActiveIndex] = useState(1);
 
-  // ==========================================
-  // STATE BARU: Untuk melacak sentuhan jari (Touch) & Geseran Mouse (Drag)
-  // ==========================================
+  // STATE BARU: Pendeteksi layar
+  const [isMobile, setIsMobile] = useState(false);
+  // STATE: Untuk melacak sentuhan jari (Touch) & Geseran Mouse (Drag)
   const [isDragging, setIsDragging] = useState(false);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [touchEndX, setTouchEndX] = useState<number | null>(null);
   const minSwipeDistance = 50; // Jarak minimal geseran (50px)
 
-  // Fungsi untuk berpindah slide
+  // EFEK BARU: Mendeteksi ukuran layar
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // KUNCI PRESISI TENGAH:
+  const slideDistance = isMobile ? 352 : 512;
+
+  //berpindah slide
   const handleSlideChange = (index: number) => {
     setActiveIndex(index);
   };
 
-  // ==========================================
-  // FUNGSI BARU: Logika membaca geseran jari
-  // ==========================================
+  // Logika membaca geseran jari / kursor
   const handleSwipe = () => {
     if (!touchStartX || !touchEndX) return;
 
@@ -35,16 +42,16 @@ const TestimonialsSections = () => {
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
 
-    // Geser ke kiri (Next)
+    // Geser ke kiri
     if (isLeftSwipe && activeIndex < testimonialsData.length - 1) {
       handleSlideChange(activeIndex + 1);
     }
-    // Geser ke kanan (Prev)
+    // Geser ke kanan
     if (isRightSwipe && activeIndex > 0) {
       handleSlideChange(activeIndex - 1);
     }
 
-    // Reset posisi setelah selesai menggeser
+    // Reset posisi
     setTouchStartX(null);
     setTouchEndX(null);
   };
@@ -93,22 +100,17 @@ const TestimonialsSections = () => {
       className='py-20 bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 overflow-hidden'
     >
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative'>
-        {/* ======================================= */}
         {/* JUDUL & SUBJUDUL                        */}
-        {/* ======================================= */}
         <div className='text-center max-w-3xl mx-auto mb-16 space-y-4'>
           <h2 className='text-3xl md:text-4xl lg:text-[35px] font-semibold tracking-tight text-black dark:text-white'>
             What Partners Say About Working With Us
           </h2>
-          {/* Subjudul yang ditambahkan */}
           <p className='text-gray-500 dark:text-gray-400 text-lg md:text-xl font-medium'>
             Trusted voices. Real experiences. Proven results.
           </p>
         </div>
 
-        {/* ======================================= */}
         {/* SLIDER CONTAINER                        */}
-        {/* ======================================= */}
         <div
           className='relative w-full pt-10 pb-24 overflow-hidden select-none cursor-grab active:cursor-grabbing'
           onTouchStart={onTouchStart}
@@ -119,7 +121,7 @@ const TestimonialsSections = () => {
           onMouseUp={onMouseUp}
           onMouseLeave={onMouseLeave}
         >
-          {/* Efek Gelap di Sisi Kiri dan Kanan (Shadow Overlay) */}
+          {/* Efek Gelap di Sisi Kiri dan Kanan */}
           <div className='absolute inset-y-0 left-0 w-40 bg-linear-to-r from-white to-transparent dark:from-black to-transparent z-30 pointer-events-none'></div>
           <div className='absolute inset-y-0 right-0 w-40 bg-linear-to-l from-white to-transparent dark:from-black to-transparent z-30 pointer-events-none'></div>
 
@@ -127,7 +129,7 @@ const TestimonialsSections = () => {
           <div
             className='flex justify-center items-center transition-all duration-700 ease-in-out gap-8'
             style={{
-              transform: `translateX(${(1 - activeIndex) * 420}px)`,
+              transform: `translateX(${(1 - activeIndex) * slideDistance}px)`,
             }}
           >
             {testimonialsData.map((item, index) => {
@@ -150,9 +152,7 @@ const TestimonialsSections = () => {
             })}
           </div>
 
-          {/* ======================================= */}
           {/* NAVIGASI TITIK TIGA (LINGKARAN STATIS)  */}
-          {/* ======================================= */}
           <div className='absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-1.5'>
             {testimonialsData.map((_, index) => (
               <button
@@ -173,7 +173,6 @@ const TestimonialsSections = () => {
   );
 };
 
-// ========================================================
 // KOMPONEN KOTAK TESTIMONIAL
 // ========================================================
 const TestimonialCard = ({
@@ -185,7 +184,7 @@ const TestimonialCard = ({
 }) => {
   return (
     <div
-      className={`relative bg-gray-200 dark:bg-[#0B0F19] rounded-2xl p-6 pt-10 pb-12 border transition-all duration-500 flex flex-col items-center text-center w-140 h-80 shrink-0
+      className={`relative bg-gray-200 dark:bg-[#0B0F19] rounded-2xl p-6 pt-10 pb-12 border transition-all duration-500 flex flex-col items-center text-center w-[320px] md:w-[480px] h-80 shrink-0 pointer-events-none
       ${isActive ? 'border-[#FF6B4A]' : 'border-gray-800'}
     `}
     >
@@ -194,6 +193,7 @@ const TestimonialCard = ({
         <img
           src={vectorIcon}
           alt='Quote Icon'
+          draggable={false}
           className='w-full h-full object-contain opacity-80'
         />
       </div>
@@ -203,6 +203,7 @@ const TestimonialCard = ({
         <img
           src={ratingImg}
           alt='Rating Stars'
+          draggable={false}
           className='h-5 md:h-6 object-contain'
         />
       </div>
@@ -230,6 +231,7 @@ const TestimonialCard = ({
         <img
           src={item.image}
           alt={item.name}
+          draggable={false}
           className='w-full h-full object-cover'
         />
       </div>
