@@ -1,5 +1,5 @@
 import Button from '../ui/Button';
-
+//...
 // Memanggil data yang sudah dirapikan dari file hero
 import { heroData } from '../../data/hero';
 
