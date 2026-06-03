@@ -102,10 +102,10 @@ const TestimonialsSections = () => {
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative'>
         {/* JUDUL & SUBJUDUL                        */}
         <div className='text-center max-w-3xl mx-auto mb-16 space-y-4'>
-          <h2 className='text-3xl md:text-4xl lg:text-[35px] font-semibold tracking-tight text-black dark:text-white'>
+          <h2 className='text-4xl md:text-4xl lg:text-[35px] font-semibold tracking-wide text-black dark:text-white'>
             What Partners Say About Working With Us
           </h2>
-          <p className='text-gray-500 dark:text-gray-400 text-lg md:text-xl font-medium'>
+          <p className='text-gray-500 dark:text-gray-400 text-[18px] md:text-xl font-medium'>
             Trusted voices. Real experiences. Proven results.
           </p>
         </div>
@@ -184,8 +184,8 @@ const TestimonialCard = ({
 }) => {
   return (
     <div
-      className={`relative bg-gray-200 dark:bg-[#0B0F19] rounded-2xl p-6 pt-10 pb-12 border transition-all duration-500 flex flex-col items-center text-center w-[320px] md:w-[480px] h-80 shrink-0 pointer-events-none
-      ${isActive ? 'border-[#FF6B4A]' : 'border-gray-800'}
+      className={`relative bg-gray-200 dark:bg-[#0B0F19] rounded-2xl p-6 pt-10 pb-12 border transition-all duration-500 flex flex-col items-center text-center w-[340px] md:w-[480px] h-85 md:h-80 shrink-0 pointer-events-none
+      ${isActive ? 'border-[#1a1a10]' : 'border-gray-800'}
     `}
     >
       {/* ICON VECTOR */}
@@ -209,7 +209,7 @@ const TestimonialCard = ({
       </div>
 
       {/* KUTIPAN */}
-      <p className='text-black dark:text-gray-300 text-sm md:text-[16px] font-semibold leading-relaxed mb-4 flex-grow'>
+      <p className='text-black dark:text-gray-300 text-[14px] md:text-[16px] font-semibold leading-relaxed mb-4 flex-grow'>
         "{item.quote}"
       </p>
 

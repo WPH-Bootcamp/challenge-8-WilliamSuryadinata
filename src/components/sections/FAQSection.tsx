@@ -26,14 +26,11 @@ const FAQSection = () => {
         {/* HEADER: JUDUL DI UJUNG KIRI & SUBJUDUL DI UJUNG KANAN     */}
         {/* ========================================================= */}
         <div className='flex flex-col md:flex-row justify-between items-start md:items-end gap-4 pb-6 border-b border-gray-300 dark:border-gray-800'>
-          <h2 className='text-3xl md:text-4xl font-semibold text-black dark:text-white text-left tracking-wide'>
-            Need Help? Start
-            <br></br>
-            Here.
+          <h2 className='text-4xl md:text-4xl lg:text-[45px] font-semibold tracking-tight text-black dark:text-white'>
+            Need Help? Start Here.
           </h2>
-          <p className='text-base text-gray-500 dark:text-slate-500 text-left md:text-right max-w-md leading-relaxed tracking-wide'>
-            Everything you need to <br></br>
-            know - all in one place.
+          <p className='text-[16px] md:text-lg text-slate-600 dark:text-slate-400 font-medium w-full md:max-w-sm text-left md:text-right pb-1'>
+            Everything you need to know - all in one place.
           </p>
         </div>
 
@@ -86,14 +83,14 @@ const FAQSection = () => {
           </div>
 
           {/* SEBELAH KANAN: KOTAK INFORMASI / KONSULTASI */}
-          <div className='w-auto lg:w-100 py-8 '>
-            <div className='bg-[#ca4729] rounded-2xl p-6 border border-gray-800 shadow-xl flex flex-col'>
+          <div className='w-full lg:w-100 pt-2 pb-8 lg:py-8 flex justify-center lg:block'>
+            <div className='bg-[#ca4729] rounded-2xl p-6 border border-gray-800 shadow-xl flex flex-col w-full max-w-[340px] lg:max-w-full'>
               {/* Bagian Atas: Judul & Subjudul di Dalam Kotak */}
               <div className='mb-6'>
-                <h3 className='text-xl font-semibold text-[35px] text-white mb-1'>
+                <h3 className='text-[32px] font-semibold md:text-[35px] text-white mb-1'>
                   Let's talk it through
                 </h3>
-                <p className='text-xs md:text-[18px] text-white'>
+                <p className='text-[15px] md:text-[18px] text-white'>
                   book a free consultation with our team.
                 </p>
               </div>
@@ -109,7 +106,7 @@ const FAQSection = () => {
 
               {/* Bagian Bawah: Placeholder Warna Putih dengan Tulisan di dalamnya */}
               <button className='w-full bg-black dark:bg-white rounded-4xl py-2 mt-4 text-center border border-gray-100 shadow-sm transition-all duration-200 hover:opacity-80 active:scale-95 cursor-pointer'>
-                <span className='text-white dark:text-black text-xs md:text-[15px] leading-normal font-semibold'>
+                <span className='text-white dark:text-black text-[15px] md:text-[15px] leading-normal font-semibold'>
                   Free Consultation
                 </span>
               </button>

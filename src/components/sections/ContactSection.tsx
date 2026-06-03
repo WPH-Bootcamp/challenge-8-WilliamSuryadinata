@@ -73,10 +73,10 @@ const AboutSection = () => {
         <div className='animate-in fade-in duration-500'>
           {/* Judul & Subjudul */}
           <div className='text-center mb-16 space-y-4'>
-            <h2 className='text-3xl md:text-5xl font-semibold tracking-wide text-slate-900 dark:text-white'>
+            <h2 className='text-4xl md:text-5xl font-semibold tracking-wide text-slate-900 dark:text-white'>
               Ready to Start? Let's Talk.
             </h2>
-            <p className='text-base md:text-[18px] text-gray-500 dark:text-gray-500 max-w-2xl mx-auto'>
+            <p className='text-[15px] md:text-[18px] text-gray-500 dark:text-gray-500 max-w-2xl mx-auto'>
               Tell us what you need, and we'll get back to you soon.
             </p>
           </div>

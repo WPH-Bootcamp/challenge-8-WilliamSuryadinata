@@ -5,5 +5,5 @@ export const serviceOptions = [
   'UI/UX Design',
   'Cloud Solutions',
   'Software QA',
-  'IT Consulting',
+  'Other',
 ];

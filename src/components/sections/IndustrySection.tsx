@@ -14,7 +14,7 @@ export default function IndustrySection() {
           <h2 className='text-4xl text-black dark:text-white md:text-5xl font-semibold mb-4 text-left'>
             Built for Your Industry
           </h2>
-          <p className='text-gray-500 lg:text-[14px] dark:text-gray-500 max-w-2xl text-left tracking-wide'>
+          <p className='text-gray-500 text-[18px] lg:text-[14px] dark:text-gray-500 max-w-2xl text-left tracking-wide'>
             We've helped companies across industries launch smarter, faster, and
             more securely
           </p>
@@ -50,7 +50,7 @@ export default function IndustrySection() {
                 activeTab === tab.id && (
                   <div key={tab.id} className='animate-in fade-in duration-500'>
                     {/* Penjelasan di atas */}
-                    <p className='px-3 lg:text-[18px] mb-4 text-xl text-black dark:text-white font-light leading-relaxed'>
+                    <p className='px-3 py-7 md:py-2 lg:text-[18px] mb-4 text-[19px] text-black dark:text-white font-light leading-relaxed'>
                       {tab.description}
                     </p>
                     {/* Gambar di bawah */}

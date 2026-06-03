@@ -6,7 +6,7 @@ export const heroData = {
   titleLine1: 'Your Tech Partner for',
   titleHighlight: ' Smarter Growth',
   description:
-    'We design, build, and scale digital solutions that empower your business to thrive in a fast-paced world. From elegant web apps to complex software systems, we turn your vision into reality.',
+    'We deliver tailored IT solutions to help you scale with speed and confidence.',
   buttonText: "Let's Talk",
   images: {
     dark: heroDark,

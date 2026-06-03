@@ -41,30 +41,28 @@ const AboutSection = () => {
         {/* ========================================= */}
         <div className='flex flex-col items-center justify-center w-full'>
           {/* Judul & Subjudul */}
-          <div className='text-center max-w-3xl mx-auto mb-16 space-y-0'>
-            <h2 className='md:py-10 text-3xl md:text-4xl lg:text-[36px] font-semibold tracking-tight text-black dark:text-white'>
+          <div className='text-center max-w-3xl mx-auto mb-8 md:mb-16 space-y-0'>
+            <h2 className='py-6 md:py-10 text-4xl md:text-4xl lg:text-[36px] font-semibold tracking-tight text-black dark:text-white'>
               End-to-End IT Solutions That Drive Results
             </h2>
-            <p className='text-base md:text-lg text-slate-700 dark:text-slate-400 leading-relaxed font-normal'>
+            <p className='text-[18px] md:text-lg text-slate-700 dark:text-slate-400 leading-relaxed font-normal'>
               From strategy to execution, we deliver solutions that grow your
               business.
             </p>
           </div>
 
           {/* Grid Lingkaran Statistik */}
-          <div className='grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 w-full justify-items-center'>
+          <div className='grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 md:gap-12 w-full justify-items-center'>
             {stats.map((stat, index) => (
-              /* Trik Gradient Border: Kontainer luar diberi padding [2px] dengan background gradient */
               <div
                 key={index}
-                className='relative flex items-center justify-center w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full bg-gradient-to-tr transition-transform duration-300 hover:-translate-y-2'
+                className='relative flex items-center justify-center w-[160px] h-[160px] min-[390px]:w-[175px] min-[390px]:h-[175px] sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full bg-gradient-to-tr transition-transform duration-300 hover:-translate-y-2'
               >
-                {/* Kontainer Dalam: Menggunakan background utama (hitam/putih) agar tengahnya bolong */}
-                <div className='flex flex-col items-center justify-center w-full h-full bg-slate-100 dark:bg-[#0B0F19] rounded-full text-center px-4'>
-                  <h4 className='text-4xl md:text-5xl font-semibold text-[#FF6B4A] mb-2 tracking-tight'>
+                <div className='flex flex-col items-center justify-center w-full h-full bg-slate-100 dark:bg-[#0B0F19] rounded-full text-center px-2'>
+                  <h4 className='text-3xl min-[390px]:text-4xl md:text-5xl font-semibold text-[#FF6B4A] mb-1 md:mb-2 tracking-tight'>
                     {stat.number}
                   </h4>
-                  <p className='text-base md:text-base font-semibold text-slate-700 dark:text-slate-300'>
+                  <p className='text-[13px] min-[390px]:text-sm md:text-base font-semibold text-slate-700 dark:text-slate-300 leading-tight'>
                     {stat.label}
                   </p>
                 </div>
