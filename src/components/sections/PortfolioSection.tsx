@@ -11,10 +11,10 @@ const PortfolioSection = () => {
         {/* JUDUL DAN SUBJUDUL DI TENGAH            */}
         {/* ======================================= */}
         <div className='text-center max-w-3xl mx-auto mb-16 md:mb-20 space-y-5'>
-          <h2 className='text-3xl md:text-4xl lg:text-[32px] font-semibold tracking-tight text-black dark:text-white'>
+          <h2 className='text-[35px] md:text-4xl lg:text-[32px] font-semibold tracking-tight text-black dark:text-white'>
             From Vision to Launch! Projects We’re Proud Of
           </h2>
-          <p className='text-base md:text-[12] text-slate-600 dark:text-slate-400'>
+          <p className='text-[18px] md:text-[12] text-slate-600 dark:text-slate-400'>
             Take a closer look at our recent work powering startups, enterprise,
             and everything in between.
           </p>

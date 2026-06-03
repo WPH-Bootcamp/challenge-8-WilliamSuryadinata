@@ -11,10 +11,10 @@ const SolutionsSection = () => {
         {/* JUDUL DAN SUBJUDUL DI TENGAH            */}
         {/* ======================================= */}
         <div className='text-center max-w-3xl mx-auto mb-16 md:mb-24 space-y-4'>
-          <h2 className='text-3xl md:text-4xl lg:text-[42px] font-bold tracking-tight text-slate-900 dark:text-white'>
-            Smart IT Solutions That Go With You
+          <h2 className='text-4xl md:text-4xl lg:text-[42px] font-semibold tracking-wide text-slate-900 dark:text-white'>
+            Smart IT Solutions That Grow With You
           </h2>
-          <p className='text-base md:text-lg text-slate-600 dark:text-slate-400'>
+          <p className='text-[17px] md:text-lg text-slate-600 dark:text-slate-400'>
             Tailored tech to boost efficiency, security, and results
           </p>
         </div>
